@@ -13,12 +13,25 @@ class TextEditor : public QMainWindow
 
 public:
     TextEditor(QWidget *parent = nullptr);
+    QString opened_filename;
     ~TextEditor();
 
 private slots:
     void on_actionNew_triggered();
 
     void on_actionOpen_triggered();
+
+    void on_actionSave_triggered();
+
+    void on_actionSave_as_triggered();
+
+    void on_actionCopy_triggered();
+
+    void on_actionPaste_triggered();
+
+    void on_actionRedo_triggered();
+
+    void on_actionUndo_triggered();
 
 private:
     Ui::TextEditor *ui;
