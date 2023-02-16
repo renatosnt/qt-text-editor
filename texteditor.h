@@ -33,6 +33,16 @@ private slots:
 
     void on_actionUndo_triggered();
 
+    void on_actionText_Color_triggered();
+
+    void on_actionBackground_triggered();
+
+    void on_actionFont_Family_triggered();
+
+    void on_actionAbout_triggered();
+
+    void on_actionPrint_triggered();
+
 private:
     Ui::TextEditor *ui;
 };

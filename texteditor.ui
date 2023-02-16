@@ -42,6 +42,8 @@
     <addaction name="actionOpen"/>
     <addaction name="actionSave"/>
     <addaction name="actionSave_as"/>
+    <addaction name="separator"/>
+    <addaction name="actionPrint"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
@@ -52,8 +54,24 @@
     <addaction name="actionRedo"/>
     <addaction name="actionUndo"/>
    </widget>
+   <widget class="QMenu" name="menuFormat">
+    <property name="title">
+     <string>Format</string>
+    </property>
+    <addaction name="actionText_Color"/>
+    <addaction name="actionBackground"/>
+    <addaction name="actionFont_Family"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
+   <addaction name="menuFormat"/>
+   <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
@@ -76,6 +94,7 @@
    <addaction name="actionPaste"/>
    <addaction name="actionRedo"/>
    <addaction name="actionUndo"/>
+   <addaction name="actionPrint"/>
   </widget>
   <action name="actionNew">
    <property name="icon">
@@ -155,6 +174,51 @@
    </property>
    <property name="text">
     <string>Undo</string>
+   </property>
+  </action>
+  <action name="actionText_Color">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/img/cor.png</normaloff>:/img/cor.png</iconset>
+   </property>
+   <property name="text">
+    <string>Color</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/img/about.png</normaloff>:/img/about.png</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionBackground">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/img/background.png</normaloff>:/img/background.png</iconset>
+   </property>
+   <property name="text">
+    <string>Background</string>
+   </property>
+  </action>
+  <action name="actionFont_Family">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/img/font.png</normaloff>:/img/font.png</iconset>
+   </property>
+   <property name="text">
+    <string>Font Family</string>
+   </property>
+  </action>
+  <action name="actionPrint">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/img/print.png</normaloff>:/img/print.png</iconset>
+   </property>
+   <property name="text">
+    <string>Print</string>
    </property>
   </action>
  </widget>

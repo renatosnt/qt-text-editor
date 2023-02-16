@@ -3,6 +3,10 @@
 #include <QFileDialog>
 #include <QFile>
 #include <QMessageBox>
+#include <QColorDialog>
+#include <QFontDialog>
+#include <QPrintDialog>
+#include <QPrinter>
 TextEditor::TextEditor(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::TextEditor)
@@ -119,5 +123,55 @@ void TextEditor::on_actionRedo_triggered()
 void TextEditor::on_actionUndo_triggered()
 {
     ui->textEdit->undo();
+}
+
+
+void TextEditor::on_actionText_Color_triggered()
+{
+    QColor color = QColorDialog::getColor(Qt::black, this, "Font Color");
+
+    if (color.isValid()) {
+        ui->textEdit->setTextColor(color);
+    }
+}
+
+
+void TextEditor::on_actionBackground_triggered()
+{
+    QColor color = QColorDialog::getColor(Qt::black, this, "Background Color");
+
+    if(color.isValid()) {
+        ui->textEdit->setTextBackgroundColor(color);
+    }
+}
+
+
+void TextEditor::on_actionFont_Family_triggered()
+{
+    bool ok;
+    QFont font = QFontDialog::getFont(&ok, this);
+
+    if (ok) {
+        ui->textEdit->setFont(font);
+    }
+}
+
+
+void TextEditor::on_actionAbout_triggered()
+{
+    QMessageBox::about(this, "About", "Just a simple text editor to help me learn QT.");
+}
+
+
+void TextEditor::on_actionPrint_triggered()
+{
+    QPrinter printer;
+    QPrintDialog dialog_printer;
+
+    if (dialog_printer.exec() == QDialog::Rejected) {
+        return;
+    }
+
+    ui->textEdit->print(&printer);
 }
 
